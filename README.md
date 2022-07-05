@@ -2,7 +2,7 @@
 
 ### Requirements
 
-* Rhino 7 / Grasshopper
+* [Rhinoceros 7 / Grasshopper] (https://www.rhino3d.com/download/)
 * [Anaconda Python](https://www.anaconda.com/distribution/?gclid=CjwKCAjwo9rtBRAdEiwA_WXcFoyH8v3m-gVC55J6YzR0HpgB8R-PwM-FClIIR1bIPYZXsBtbPRfJ8xoC6HsQAvD_BwE)
 * [Visual Studio Code](https://code.visualstudio.com/)
 * [Github Desktop](https://desktop.github.com/)
@@ -19,23 +19,22 @@ Execute the commands below in Anaconda Prompt:
 
 #### Windows
     (base) conda create -n comobrick compas --yes
-    (base) conda activate rsrd
+    (base) conda activate comobrick
 
 #### Mac
     (base) conda create -n comobrick compas python.app --yes
     (base) conda activate comobrick
     
-
 #### Verify Installation
 
     (comobrick) python -m compas
 
+    
     Yay! COMPAS is installed correctly!
 
 #### Install on Rhino
 
     (comobrick) python -m compas_rhino.install -v 7.0
-
 
 ### 2. Cloning the Course Repository
 
