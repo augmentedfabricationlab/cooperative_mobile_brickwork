@@ -1,8 +1,10 @@
 # Cooperative Mobile Brickwork
 
+This repository provides datastructures, tools and methods for assembly information modeling and robotic bricklaying.
+
 ### Requirements
 
-* [Rhinoceros 7 / Grasshopper] (https://www.rhino3d.com/download/)
+* [Rhinoceros 7 / Grasshopper](https://www.rhino3d.com/download/)
 * [Anaconda Python](https://www.anaconda.com/distribution/?gclid=CjwKCAjwo9rtBRAdEiwA_WXcFoyH8v3m-gVC55J6YzR0HpgB8R-PwM-FClIIR1bIPYZXsBtbPRfJ8xoC6HsQAvD_BwE)
 * [Visual Studio Code](https://code.visualstudio.com/)
 * [Github Desktop](https://desktop.github.com/)
