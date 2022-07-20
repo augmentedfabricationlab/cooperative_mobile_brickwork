@@ -61,7 +61,7 @@ def plan_picking_motion(robot, picking_frame, safelevel_picking_frame, start_con
 
 
 
-def plan_moving_and_placing_motion(robot, element, start_configuration, tolerance_vector, safelevel_vector, attached_element_mesh):
+def plan_moving_and_placing_motion(robot, element, start_configuration, tolerance_vector, safe_target_frame, attached_element_mesh):
     """Returns two trajectories for moving and placing an element.
 
     Parameters
@@ -83,14 +83,10 @@ def plan_moving_and_placing_motion(robot, element, start_configuration, toleranc
 
     target_frame = element._tool_frame.copy()
     target_frame.point += tolerance_vector
-
-    safelevel_target_frame = target_frame.copy()
-    safelevel_target_frame.point += safelevel_vector
-
     # Calculate goal constraints
-    safelevel_target_frame_tool0 = robot.from_tcf_to_t0cf(
-        [safelevel_target_frame])[0]
-    goal_constraints = robot.constraints_from_frame(safelevel_target_frame_tool0,
+    safe_target_frame_tool0 = robot.from_tcf_to_t0cf(
+        [safe_target_frame])[0]
+    goal_constraints = robot.constraints_from_frame(safe_target_frame_tool0,
                                                     tolerance_position,
                                                     tolerance_axes)
 
@@ -104,7 +100,7 @@ def plan_moving_and_placing_motion(robot, element, start_configuration, toleranc
                                           ))
 
 
-    frames = [safelevel_target_frame, target_frame]
+    frames = [safe_target_frame, target_frame]
     frames_tool0 = robot.from_tcf_to_t0cf(frames)
     # as start configuration take last trajectory's end configuration
     last_configuration = Configuration(moving_trajectory.points[-1].values, moving_trajectory.points[-1].types)
